@@ -10,16 +10,16 @@ body {
 }
 
 .bookContainer {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    background-color: blueviolet
+    grid-template-rows: repeat(6, 1fr); */
+    background-color: red;
 }
 
 form {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; */
 }
 
 .subBtn {

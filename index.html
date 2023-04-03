@@ -10,25 +10,31 @@
 </head>
 <body>
     <h1 class="bookTitle">Library</h1>
-    <div class="bookContainer"></div>
+    <div id="bookContainer" class="bookContainer"></div>
     <form action="" method="post">
-        <div>
+        <fieldset>
+            <legend>New Book Details:</legend>
+            <!-- <div> -->
             <label for="title">Title</label>
-            <input type="text" id="title" name="title">
-        </div>
-        <div>
+            <input type="text" id="title" name="title" required>
+            <!-- </div>
+            <div> -->
             <label for="author">Author</label>
-            <input type="text" id="author" name="author">
-        </div>
-        <div>
+            <input type="text" id="author" name="author" required>
+            <!-- </div>
+            <div> -->
             <label for="pages">Pages</label>
-            <input type="text" id="pages" name="pages">
-        </div>
-        <div>
+            <input type="text" id="pages" name="pages" required>
+            <!-- </div>
+            <div> -->
+            <input type="radio" id="read" name="read" value="Yes" required>
             <label for="read">Read</label>
-            <input type="text" id="read" name="read">
-        </div>
-        <button class="subBtn" type="submit">ADD NEW BOOK</button>
+            <br>
+            <input type="radio" id="notRead" name="read" value="No" required>
+            <label for="notRead">Not read</label>
+            <!-- </div> -->
+            <button id="subBtn" class="subBtn" type="submit" value="submit">ADD NEW BOOK</button>
+        </fieldset>
     </form>
 </body>
 </html>
