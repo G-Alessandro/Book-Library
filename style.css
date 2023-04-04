@@ -1,25 +1,54 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     display: grid;
-    grid-template-rows: 1fr 3fr 3fr;
-    background-color: aquamarine;
+    grid-template-rows: .5fr 5fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: #deb886;
+}
+
+.bookTitle {
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: center;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #5a3828;
 }
 
 .bookContainer {
-    /* display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr); */
-    background-color: red;
+    grid-area: 2 / 2 / 3 / 3;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+    align-content: space-evenly;
+    justify-items: center;
+    padding: .3rem;
+    background-color: #6f432a;
+    border: 1rem solid #98633b;
+}
+
+.bookInLibrary {
+    width: 100px;
+    height: 100px;
+    background-color: #b67a4f;
+    border: 4px solid rgb(218, 211, 195);
+    color: white;
 }
 
 form {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr; */
+    grid-area: 2 / 1 / 2 / 2;
+    padding: 1rem;
+}
+
+fieldset {
+    display: grid;
+    grid-template-rows: repeat(6,1fr);
+
 }
 
 .subBtn {
