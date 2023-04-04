@@ -1,7 +1,13 @@
 const bookContainer = document.getElementById('bookContainer');
+const bookAdd = document.createElement('div');
 const subBtn = document.getElementById('subBtn');
 
-const myLibrary = [];
+let myLibrary = [{title: 'The Lord of The Rings', author: 'John R.R. Tolkien', pages: '1178', read: 'No' },
+                  {title: 'The Physics of Star Trek', author: 'Lawrence M. Krauss, Stephen Hawking (Foreword)', pages: '208', read: 'No' },
+                  {title: 'La scienza delle verdure', author: 'Dario Bressanini', pages: '277', read: 'No'},
+                  {title: 'La scienza della carne', author: 'Dario Bressanini', pages: '239', read: 'No'},
+                  {title: 'A piedi nudi su Marte', author: 'Adrian Fartade', pages: '285', read: 'No'}
+];
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -10,19 +16,26 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+// function addBook {
+//   for ()
+// }
+
 function addBookToLibrary() {
-  const t = document.getElementById('title').value;
-  const a = document.getElementById('author').value;
-  const p = document.getElementById('pages').value;
-  const r = document.getElementById('read').value;
-  const newBook = new Book(t, a, p, r);
-  myLibrary.push(newBook);
-  // document.getElementById('bookContainer').innerText = x;
+  let t = document.getElementById('title').value;
+  let a = document.getElementById('author').value;
+  let p = document.getElementById('pages').value;
+  let r = document.getElementById('read').value;
+  let x = new Book(t, a, p, r);
+  myLibrary.push(x);
+
   console.log(myLibrary);
 }
 
+
 subBtn.addEventListener('click', () => {
   addBookToLibrary();
-  console.log('1', myLibrary[0]);
-  console.log('2', myLibrary[0].title);
+
+  bookContainer.appendChild(bookAdd);
+  console.log('111', myLibrary[0]);
+  console.log('222', myLibrary.length);
 });
