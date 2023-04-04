@@ -42,16 +42,47 @@ body {
 
 form {
     grid-area: 2 / 1 / 2 / 2;
-    padding: 1rem;
+    padding: 0 4rem 0 4rem;
 }
 
-fieldset {
+.container {
     display: grid;
     grid-template-rows: repeat(6,1fr);
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: 900;
+    background-color: #6f432a;
+    border: 1rem solid #98633b;
+}
 
+input[type=text] {
+    height: 2rem;
+    background-color: #da9e51;
+    border-radius: .2rem;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+.radio {
+    margin: 1rem;
+}
+
+input[type=radio] {
+    width: 1rem;
+    height: 1rem;
 }
 
 .subBtn {
-    color: white;
-    background-color: brown;
+    width: 9rem;
+    height: 4rem;
+    justify-self: center;
+    font-size: 1rem;
+    font-weight: 900;
+    color: #ffffff;
+    background-color: #98633b;
+    border: .3rem solid #6f432a;
+    border-radius: .5rem;
 }
