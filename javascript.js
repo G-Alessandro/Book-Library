@@ -69,19 +69,22 @@ function addBookDiv() {
       btnRead.textContent = 'Not Read';
     }
 
-
-    // btnRead.addEventListener('click', function() {
-    //   if (myLibrary[i].read === 'no') {
-    //     btnRead.textContent = 'Read';
-    //     btnRead.classList.toggle('greenBtn');
-    //     myLibrary[i].read = 'yes';
-    //   }
-    //   if (myLibrary[i].read === 'yes') {
-    //     btnRead.textContent = 'Not Read';
-    //     myLibrary[i].read = 'no';
-    //   }
-    //   console.log("2",myLibrary[i]);
-    // })
+    btnRead.addEventListener('click', () => {
+      btnRead.classList.toggle('greenBtn');
+      const thisBookTitle = bookAdd.getAttribute('data');
+      const indexBookTitle = myLibrary.indexOf(myLibrary.find(({ title }) => title === thisBookTitle));
+      if (myLibrary[indexBookTitle].read === 'no') {
+        myLibrary[indexBookTitle].read = 'yes';
+        btnRead.textContent = 'Read';
+        // console.log('CAMBIATO IN YES');
+        // console.log('1', myLibrary[indexBookTitle]);
+      } else {
+        myLibrary[indexBookTitle].read = 'no';
+        btnRead.textContent = 'Not Read';
+        // console.log('CAMBIATO IN NO');
+        // console.log('2', myLibrary[indexBookTitle]);
+      }
+    });
 
     const removeBook = document.createElement('button');
     removeBook.classList.add('removeBook', 'btnBook');
@@ -102,7 +105,7 @@ function addBookDiv() {
           bookAdd.remove();
         }
       }
-      console.log('myLibrary2', myLibrary);
+      // console.log('myLibrary2', myLibrary);
     });
   }
 }
