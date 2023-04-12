@@ -71,14 +71,45 @@ body {
     padding: .3rem;
     border-radius: .5rem;
     background-color: rgb(180, 177, 177);
+    border: none;
+    box-shadow: 0 .2rem rgb(90, 90, 90);
+}
+
+.btnBook:hover {
+    background-color: rgb(143, 141, 141);
+}
+
+.btnBook:active {
+    box-shadow: 0 .1rem rgb(90, 90, 90);;
+    transform: translateY(.1rem);
 }
 
 .greenBtn {
     background-color: rgb(181, 255, 71);
+    box-shadow: 0 .2rem rgb(66, 99, 18);
+}
+
+.greenBtn:hover {
+    background-color: rgb(157, 255, 10);
+}
+
+.greenBtn:active {
+    box-shadow: 0 .1rem rgb(66, 99, 18);
+    transform: translateY(.1rem);
 }
 
 .removeBook {
     background-color: rgb(255, 72, 72);
+    box-shadow: 0 .2rem rgb(158, 17, 17);
+}
+
+.removeBook:hover {
+    background-color: rgb(253, 32, 32);
+}
+
+.removeBook:active {
+    box-shadow: 0 .1rem rgb(158, 17, 17);
+    transform: translateY(.1rem);
 }
 
 form {
@@ -129,6 +160,18 @@ input[type=radio] {
     font-weight: 900;
     color: #ffffff;
     background-color: #98633b;
-    border: .3rem solid #6f432a;
+    border: .3rem solid #98633b;
     border-radius: .9rem;
+    margin: .5rem 0;
+    box-shadow: 0 .2rem #5a3828;
+}
+
+.subBtn:hover {
+    background-color: #815534;
+    border: .3rem solid #815534;
+}
+
+.subBtn:active {
+    box-shadow: 0 .1rem #5a3828;
+    transform: translateY(.2rem);
 }
