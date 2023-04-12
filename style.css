@@ -70,14 +70,11 @@ body {
 .btnBook {
     padding: .3rem;
     border-radius: .5rem;
+    background-color: rgb(180, 177, 177);
 }
 
 .greenBtn {
     background-color: rgb(181, 255, 71);
-}
-
-.redBtn {
-    background-color: rgb(180, 177, 177);
 }
 
 .removeBook {
