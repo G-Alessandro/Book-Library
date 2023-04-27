@@ -76,13 +76,9 @@ function addBookDiv() {
       if (myLibrary[indexBookTitle].read === 'no') {
         myLibrary[indexBookTitle].read = 'yes';
         btnRead.textContent = 'Read';
-        // console.log('CAMBIATO IN YES');
-        // console.log('1', myLibrary[indexBookTitle]);
       } else {
         myLibrary[indexBookTitle].read = 'no';
         btnRead.textContent = 'Not Read';
-        // console.log('CAMBIATO IN NO');
-        // console.log('2', myLibrary[indexBookTitle]);
       }
     });
 
@@ -96,16 +92,11 @@ function addBookDiv() {
         const thisBookTitle = bookAdd.getAttribute('data');
         const bookTitleDel = myLibrary[e].title;
         const indexBookTitle = myLibrary.indexOf(myLibrary.find(({ title }) => title === thisBookTitle));
-        // console.log('current title', thisBookTitle);
-        // console.log('title to delete', bookTitleDel);
-        // console.log('title index', indexBookTitle);
-        // console.log('myLibrary', myLibrary);
         if (bookTitleDel === thisBookTitle) {
           myLibrary.splice(indexBookTitle, 1);
           bookAdd.remove();
         }
       }
-      // console.log('myLibrary2', myLibrary);
     });
   }
 }
@@ -113,14 +104,15 @@ function addBookDiv() {
 function addBookToLibrary() {
   const t = document.getElementById('title').value;
   const a = document.getElementById('author').value;
-  const p = document.getElementById('pages').value;
-  const r = document.getElementById('read').value;
   const l = document.getElementById('language').value;
-  const x = new Book(t, l, a, p, r);
+  const p = document.getElementById('pages').value;
+  const r = document.querySelector('input[name="read"]:checked').value;
+  const x = new Book(t, a, l, p, r);
   myLibrary.push(x);
   addBookDiv();
 }
 
-subBtn.addEventListener('click', () => {
+subBtn.addEventListener('click', (event) => {
+  event.preventDefault();
   addBookToLibrary();
 });
