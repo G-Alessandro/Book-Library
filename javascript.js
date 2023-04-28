@@ -27,7 +27,7 @@ function Book(title, language, author, pages, read) {
 }
 
 function addBookDiv() {
-  for (let i = 0; i < myLibrary.length; i++) {
+  for (let i = 0; i < myLibrary.length; i += 1) {
     const bookAdd = document.createElement('div');
     bookAdd.classList.add('bookInLibrary');
     bookAdd.setAttribute('data', `${myLibrary[i].title}`);
@@ -72,7 +72,8 @@ function addBookDiv() {
     btnRead.addEventListener('click', () => {
       btnRead.classList.toggle('greenBtn');
       const thisBookTitle = bookAdd.getAttribute('data');
-      const indexBookTitle = myLibrary.indexOf(myLibrary.find(({ title }) => title === thisBookTitle));
+      const indexTitle = myLibrary.find(({ title }) => title === thisBookTitle);
+      const indexBookTitle = myLibrary.indexOf(indexTitle);
       if (myLibrary[indexBookTitle].read === 'no') {
         myLibrary[indexBookTitle].read = 'yes';
         btnRead.textContent = 'Read';
@@ -88,10 +89,11 @@ function addBookDiv() {
     bookRead.appendChild(removeBook);
 
     removeBook.addEventListener('click', () => {
-      for (let e = 0; e < myLibrary.length; e++) {
+      for (let e = 0; e < myLibrary.length; e += 1) {
         const thisBookTitle = bookAdd.getAttribute('data');
         const bookTitleDel = myLibrary[e].title;
-        const indexBookTitle = myLibrary.indexOf(myLibrary.find(({ title }) => title === thisBookTitle));
+        const indexTitle = myLibrary.find(({ title }) => title === thisBookTitle);
+        const indexBookTitle = myLibrary.indexOf(indexTitle);
         if (bookTitleDel === thisBookTitle) {
           myLibrary.splice(indexBookTitle, 1);
           bookAdd.remove();
