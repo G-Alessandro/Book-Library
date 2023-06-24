@@ -1,5 +1,5 @@
 const bookContainer = document.getElementById('bookContainer');
-const subBtn = document.getElementById('subBtn');
+const form = document.getElementById('form');
 
 const myLibrary = [{
   title: 'The Lord of The Rings', language: 'english', author: 'John R.R. Tolkien', pages: '1178', read: 'yes',
@@ -116,7 +116,7 @@ function addBookToLibrary() {
 
 addBookDiv(0, myLibrary.length);
 
-subBtn.addEventListener('click', (event) => {
-  event.preventDefault();
+form.addEventListener('submit', (event) => {
   addBookToLibrary();
+  event.preventDefault();
 });
