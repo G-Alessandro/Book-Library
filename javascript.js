@@ -26,8 +26,8 @@ function Book(title, language, author, pages, read) {
   this.read = read;
 }
 
-function addBookDiv() {
-  for (let i = 0; i < myLibrary.length; i += 1) {
+function addBookDiv(start, length) {
+  for (let i = start; i < length; i += 1) {
     const bookAdd = document.createElement('div');
     bookAdd.classList.add('bookInLibrary');
     bookAdd.setAttribute('data', `${myLibrary[i].title}`);
@@ -111,8 +111,10 @@ function addBookToLibrary() {
   const r = document.querySelector('input[name="read"]:checked').value;
   const x = new Book(t, a, l, p, r);
   myLibrary.push(x);
-  addBookDiv();
+  addBookDiv(myLibrary.length - 1, myLibrary.length);
 }
+
+addBookDiv(0, myLibrary.length);
 
 subBtn.addEventListener('click', (event) => {
   event.preventDefault();
